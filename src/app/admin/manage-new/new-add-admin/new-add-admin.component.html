@@ -1,0 +1,24 @@
+<app-header></app-header>
+<app-side-bar></app-side-bar>
+<div style="margin:15px 0 0 270px">
+  <h3>ADD NEW</h3>
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Title</label>
+      <input type="text" class="form-control" name="title" [(ngModel)]="tin.title">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Image</label>
+      <input type="text" class="form-control" name="image" [(ngModel)]="tin.image">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Content</label>
+      <input type="text" class="form-control" name="content" [(ngModel)]="tin.content">
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="addNew()">Submit</button>
+  </form>
+</div>
+<app-footer-be></app-footer-be>

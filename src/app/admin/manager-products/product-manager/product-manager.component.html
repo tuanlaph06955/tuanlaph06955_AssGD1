@@ -1,0 +1,33 @@
+
+<app-side-bar></app-side-bar>
+  <div class="content">
+  <h3>MANAGE PRODUCTS</h3>
+    <div class="btn btn-success col-md-3" [routerLink]="['/admin/product-add']">Add Product</div>
+      <table class="table table-bordered">
+        <tr>
+          <th>ID</th>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Description</th>
+        </tr>
+        <tr *ngFor="let product of products | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize, let i = index">
+          <th style="width:10px">{{i + 1}}</th>
+          <td style="width:80px"><img width="70" src="{{product.image}}" alt=""></td>
+          <td style="width:150px">
+            {{product.name}}
+            <div class="action">
+              <a [routerLink]="['/admin/product-manager', product.id]"><i class="fas fa-file-alt"></i></a>&nbsp;
+              <a [routerLink]="['/admin/product-manager','edit', product.id]"><i class="fas fa-edit"></i></a>&nbsp;
+              <a style="cursor:pointer" (click)="removeProduct(product.id)"><i class="fas fa-trash"></i></a>
+            </div>
+          </td>
+          <td>{{product.price | currency: '$':true}}</td>
+          <td>{{product.desc}}</td>
+        </tr>
+      </table>
+      <ngb-pagination
+      [(page)]="page"
+      [pageSize]="pageSize"
+      [collectionSize]="products.length"></ngb-pagination>
+</div>

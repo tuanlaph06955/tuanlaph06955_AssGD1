@@ -1,0 +1,27 @@
+<app-header></app-header>
+<app-side-bar></app-side-bar>
+
+<div class="content">
+  <h3>MANAGE PRODUCTS</h3>
+    <div class="btn btn-success col-md-3" [routerLink]="['/admin/banner-add']">Add Banner</div>
+      <table class="table table-bordered">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Image</th>
+        </tr>
+        <tr *ngFor="let banner of banners, let i = index">
+          <th style="width:10px">{{i + 1}}</th>
+          <td style="width:100px">
+            {{banner.name}}
+            <div class="action">
+              <a [routerLink]="['/admin/banner','edit', banner.id]"><i class="fas fa-edit"></i></a>&nbsp;
+              <a style="cursor:pointer" (click)="removeBanner(banner.id)"><i class="fas fa-trash"></i></a>
+            </div>
+          </td>
+          <td style="width:250px"><img width="240" src="{{banner.image}}" alt=""></td>
+        </tr>
+      </table>
+</div>
+
+<app-footer-be></app-footer-be>

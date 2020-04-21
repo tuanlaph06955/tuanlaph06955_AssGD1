@@ -1,0 +1,27 @@
+<app-menu></app-menu>
+<app-banner></app-banner>
+
+<h3 class="tittle-w3layouts text-center my-lg-4 my-4">News</h3>
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-md-4" *ngFor="let tin of tins | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="{{ tin.image }}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title" [routerLink]="['/new', tin.id]">{{ tin.title }}</h5>
+            <p class="card-text">{{ tin.content }}</p>
+            <a [routerLink]="['/new', tin.id]" class="btn btn-primary">Detail</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <ngb-pagination
+  [(page)]="page"
+  [pageSize]="pageSize"
+  [collectionSize]="tins.length"></ngb-pagination>
+  </div>
+
+<app-footer></app-footer>

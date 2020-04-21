@@ -1,0 +1,21 @@
+<app-header></app-header>
+<app-side-bar></app-side-bar>
+
+<div class="content-detail">
+  <h3>DETAIL NEWS</h3>
+    <table class="table table-bordered">
+        <tr>
+          <th>Title</th>
+          <th>Image</th>
+          <th>Content</th>
+        </tr>
+        <tr>
+          <td>{{ tin.title }}</td>
+          <td><img style="width: 200px;" src="{{ tin.image }}"></td>
+          <td>{{ tin.content }}</td>
+        </tr>
+    </table>
+    <button class="btn btn-success btn-xs" routerLink="/admin/new">Back To List</button>
+  </div>
+
+<app-footer-be></app-footer-be>

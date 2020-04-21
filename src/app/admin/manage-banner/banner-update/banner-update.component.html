@@ -1,0 +1,20 @@
+<app-header></app-header>
+<app-side-bar></app-side-bar>
+<div class="content">
+  <h3>EDIT BANNER</h3>
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Name</label>
+      <input type="text" class="form-control" name="name" [(ngModel)]="banner.name">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Image</label>
+      <input type="text" class="form-control" name="image" [(ngModel)]="banner.image">
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="updateBanner()">Submit</button>
+  </form>
+</div>
+
+<app-footer-be></app-footer-be>

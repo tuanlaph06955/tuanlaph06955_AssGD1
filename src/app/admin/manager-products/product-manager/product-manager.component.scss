@@ -1,0 +1,20 @@
+.content{
+  margin:10px 0 0 270px;
+  width:1075px;
+  text-align: left;
+  font-size: 16px;
+}
+table{
+  margin-top:10px;
+}
+.action a {
+  text-decoration: none;
+  color: black;
+  font-family: tahoma;
+}
+.action{
+  opacity: 0;
+}
+.action:hover{
+  opacity: 1;
+}

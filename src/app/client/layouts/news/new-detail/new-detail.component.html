@@ -1,0 +1,33 @@
+<body>
+  <div class="banner-top container-fluid" id="home">
+    <app-menu></app-menu>
+    <app-banner></app-banner>
+  </div>
+
+  <section class="banner-bottom-wthreelayouts py-lg-5 py-3">
+    <div class="container-fluid">
+      <div class="inner-sec-shop px-lg-4 px-3">
+        <h3>Detail New: {{ tin.title }}</h3>
+        <table class="table table-bordered">
+
+            <tr>
+              <th>Title</th>
+              <th>Image</th>
+              <th>Content</th>
+            </tr>
+
+
+            <tr>
+              <td>{{ tin.title }}</td>
+              <td><img style="width: 200px;" src="{{ tin.image }}" alt=""></td>
+              <td>{{ tin.content }}</td>
+            </tr>
+
+        </table>
+        <button class="btn btn-success btn-xs" routerLink="/new">Back To List</button>
+      </div>
+    </div>
+  </section>
+
+</body>
+<app-footer></app-footer>
